@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-import { UserDetails, userLinks } from "./data/data";
+import { UserDetails, userLinks,SocialLinks } from "./data/data";
+
 
 const App = () => {
   return (
@@ -15,15 +16,14 @@ const App = () => {
                   <img
                     id="profile__img"
                     alt="profilepicture"
-                    src="../profilePicture.jpeg"
+                    src={user.userImage}
                   />
                 </div>
-                <div id={user.id}>{user.userNameTwitter}</div>
+                <div id={user.id}><p className="profile-name">{user.userNameTwitter}</p></div>
                 <p id="slack">{user.userNameSlack}</p>
               </div>
             );
           })}
-
           <ul className="links">
             {userLinks.map((link) => {
               return (
@@ -37,12 +37,22 @@ const App = () => {
           </ul>
         </div>
       </div>
-      <div className="bottom-container">
-        <div className="bottom-content">
+      
+        <div className="bottom-container">
           <div className="socials">
-            <img src="../public/slack.png" alt="slack" />
-            <img src="../public/Icon.png" alt="github" />
+            {SocialLinks.map((social)=>{
+              return(
+                <>
+                <img src={social.slackImage} alt="slack" />
+                <img src={social.gitImage} alt="github" />
+                </>
+              )
+            })}
+            
           </div>
+        
+        <div>
+          
         </div>
       </div>
     </div>
