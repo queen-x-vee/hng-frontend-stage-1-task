@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./index.css";
-import { UserDetails, userLinks,SocialLinks } from "./data/data";
 
+import "./index.css";
+import { UserDetails, userLinks, SocialLinks, FooterLinks } from "./data/data";
+import shareBtn from "./data/_Avatar share button.png";
+import contentBtn from "./data/Content.png";
 
 const App = () => {
   return (
@@ -19,8 +20,16 @@ const App = () => {
                     src={user.userImage}
                   />
                 </div>
-                <div id={user.id}><p className="profile-name">{user.userNameTwitter}</p></div>
+                <div >
+                  <p className="profile-name" id={user.id}>{user.userNameTwitter}</p>
+                </div>
                 <p id="slack">{user.userNameSlack}</p>
+                <a href="/">
+                  <img className="share-button" src={shareBtn} alt="share" />
+                </a>
+                <a href="/">
+                  <img className="content-button" src={contentBtn} alt="content" />
+                </a>
               </div>
             );
           })}
@@ -29,7 +38,9 @@ const App = () => {
               return (
                 <>
                   <li>
-                    <Link className="link" id={link.id} to={link.link}>{link.title}</Link>
+                    <a className="link" id={link.id} href={link.link}>
+                      {link.title}
+                    </a>
                   </li>
                 </>
               );
@@ -37,24 +48,30 @@ const App = () => {
           </ul>
         </div>
       </div>
-      
-        <div className="bottom-container">
-          <div className="socials">
-            {SocialLinks.map((social)=>{
-              return(
-                <>
+
+      <div className="bottom-container">
+        <div className="socials">
+          {SocialLinks.map((social) => {
+            return (
+              <>
                 <img src={social.slackImage} alt="slack" />
                 <img src={social.gitImage} alt="github" />
-                </>
-              )
-            })}
-            
-          </div>
-        
-        <div>
-          
+              </>
+            );
+          })}
         </div>
       </div>
+      <footer>
+        {FooterLinks.map((footer) => {
+          return (
+            <div className="footer-icon">
+              <img src={footer.Image1} alt="Zuri" />
+              <p> HNG Internship 9 Frontend Task</p>
+              <img src={footer.Image2} alt="ingressive" />
+            </div>
+          );
+        })}
+      </footer>
     </div>
   );
 };

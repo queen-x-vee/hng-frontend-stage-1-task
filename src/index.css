@@ -17,13 +17,20 @@ li{
   text-decoration: none;
   text-align:center;
   border-radius: 10px;
+  transition: all .2s ease-in-out;
   
 }
 li:hover{
   background: #353637;
   color:#fff;
+  transform: scale(1.05);
 }
-
+footer{
+  
+  margin: 50px auto 0 auto;
+  padding: 48px 52px;
+  width: 84%;
+}
 .top-container{
  background: white;
  width: 84%;
@@ -62,12 +69,14 @@ li:hover{
 .link{
   text-decoration: none;
   display: inline-block;
+  width: 100%;
   padding: 25px 0 25px 0;
   color: #111827;
  
 }
 .link:hover{
   color:#fff;
+  
 }
 .bottom-container{
   background: white;
@@ -84,4 +93,46 @@ li:hover{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.footer-icon{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.share-button, .content-button{
+  position: absolute;
+  top: 10%;
+  right: 15%;
+}
+.content-button{
+  display: none;
+}
+
+@media screen and (max-width: 512px){
+  .content-button{
+      display: block;
+      right: 10%;
+  }
+  .share-button{
+      display: none;
+  }
+}
+
+@media only screen and (max-width:790px){
+  footer{
+    padding: 48px 32px;
+  }
+}
+@media only screen and (max-width:640px){
+  [class$='content']{
+    width: 100%;
+    background: inherit;
+   }
+  .footer-icon{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
