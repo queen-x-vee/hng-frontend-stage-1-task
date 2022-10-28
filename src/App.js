@@ -33,19 +33,19 @@ const App = () => {
               </div>
             );
           })}
-          <ul className="links">
+          <div className="links">
             {userLinks.map((link) => {
               return (
                 <>
-                  <li>
+                  <div className="link-button">
                     <a className="link" id={link.id} href={link.link}>
                       {link.title}
                     </a>
-                  </li>
+                  </div>
                 </>
               );
             })}
-          </ul>
+          </div>
         </div>
       </div>
 
