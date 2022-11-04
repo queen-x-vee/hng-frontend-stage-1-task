@@ -27,7 +27,7 @@ const ContactForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    if(formData.isChecked){
+    if(formData.isChecked&&formData.message){
       alert('Your message has been sent!')
     }
     
