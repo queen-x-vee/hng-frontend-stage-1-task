@@ -5,13 +5,13 @@ import "./contactForm.css";
 const ContactForm = () => {
   const formDetails = {
     firstName: "",
-    lastName:"",
+    lastName: "",
     email: "",
-    message:"",
+    message: "",
     isChecked: false,
-  }
+  };
   const [formData, setFormData] = useState(formDetails);
-  const [formErrors, setFormErrors] = useState({})
+  const [formErrors, setFormErrors] = useState({});
 
   console.log(formData);
   function handleChange(event) {
@@ -23,27 +23,27 @@ const ContactForm = () => {
       };
     });
   }
- 
-  function handleSubmit(event){
-      event.preventDefault()
-      setFormErrors(validate(formData))
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setFormErrors(validate(formData));
   }
-  useEffect(()=>{
-    console.log(formErrors)
- if(Object.keys(formErrors).length === 0){
- }
-  }, [formErrors])
-  const validate = (values)=>{
-    const errors = {}
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length === 0) {
+    }
+  }, [formErrors]);
+  const validate = (values) => {
+    const errors = {};
     /*const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i*/
-    if(!values.message){
-      errors.message= 'Please enter a message'
+    if (!values.message) {
+      errors.message = "Please enter a message";
     }
-    if(!values.isChecked){
-      errors.isChecked= 'Please tick this box'
+    if (!values.isChecked) {
+      errors.isChecked = "Please tick this box";
     }
-    return errors
-  }
+    return errors;
+  };
 
   return (
     <>
@@ -56,17 +56,39 @@ const ContactForm = () => {
           <div className="input-large">
             <div className="form-input">
               <label>First Name</label>
-              <input type="text" id="first_name" placeholder='Enter your first name'value={formData.firstName} name='firstName' onChange={handleChange}></input>
+              <input
+                type="text"
+                id="first_name"
+                placeholder="Enter your first name"
+                value={formData.firstName}
+                name="firstName"
+                onChange={handleChange}
+                className={handleChange? 'input-hover': 'input'}
+              ></input>
             </div>
             <div className="form-input">
               <label>Last Name</label>
-              <input type="text" id="last_name" placeholder="Enter your last name" value={formData.lastName} name='lastName' onChange={handleChange}></input>
+              <input
+                type="text"
+                id="last_name"
+                placeholder="Enter your last name"
+                value={formData.lastName}
+                name="lastName"
+                onChange={handleChange}
+              ></input>
             </div>
           </div>
 
           <div className="form-input">
             <label>Email</label>
-            <input type="email" id="email" placeholder="yourname@email.com" value={formData.email} name='email' onChange={handleChange}></input>
+            <input
+              type="email"
+              id="email"
+              placeholder="yourname@email.com"
+              value={formData.email}
+              name="email"
+              onChange={handleChange}
+            ></input>
           </div>
           <div className="form-input">
             <label>Message</label>
@@ -75,21 +97,24 @@ const ContactForm = () => {
               placeholder="Send me a message and I'll reply as soon as possible"
               id="message"
               value={formData.message}
-              name='message'
+              name="message"
               onChange={handleChange}
             ></textarea>
-            <p style={{color:'red'}}>{formErrors.message}</p>
+            <p style={{ color: "red" }}>{formErrors.message}</p>
           </div>
 
           <div className="input-check">
-            <input type="checkbox"  checked={formData.isChecked}
-                name="isChecked"
-                onChange={handleChange}></input>
+            <input
+              type="checkbox"
+              checked={formData.isChecked}
+              name="isChecked"
+              onChange={handleChange}
+            ></input>
             <label>
               You agree to providing your data to Valentina who may contact you
             </label>
           </div>
-          <p style={{color:'red'}}>{formErrors.isChecked}</p>
+          <p style={{ color: "red" }}>{formErrors.isChecked}</p>
 
           <button id="btn__submit"> Send message</button>
         </form>
