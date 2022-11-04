@@ -38,15 +38,15 @@ input[placeholder], textarea[placeholder] {
 }
 
 
-/*nput[type='checkbox']{
+input[type='checkbox']{
   margin-right: 12px;
   padding: 40px;
 }
 input[type='checkbox']:checked{
   background-color: red;
   border:1px solid rgba(21, 112, 239, 1);
-}*/
-[type='checkbox']{
+}
+/*[type='checkbox']{
   opacity:0;
 }
 [type='checkbox'] + label{
@@ -73,7 +73,7 @@ input[type='checkbox']:checked{
   height: 18px;
   outline: 2px solid rgba(21, 112, 239, 1);;
   background: #ffff;
-}
+}*/
 button {
   border: 1px solid rgba(21, 112, 239, 1);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);

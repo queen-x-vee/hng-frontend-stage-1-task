@@ -27,6 +27,7 @@ const ContactForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
+    alert('Your message has been sent!')
   }
   useEffect(() => {
     console.log(formErrors);
@@ -38,6 +39,7 @@ const ContactForm = () => {
     /*const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i*/
     if (!values.message) {
       errors.message = "Please enter a message";
+      errors.style='red'
     }
     if (!values.isChecked) {
       errors.isChecked = "Please tick this box";
@@ -99,6 +101,7 @@ const ContactForm = () => {
               value={formData.message}
               name="message"
               onChange={handleChange}
+              style={{borderColor:formErrors.style}}
             ></textarea>
             <p style={{ color: "red" }}>{formErrors.message}</p>
           </div>
