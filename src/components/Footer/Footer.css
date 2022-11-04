@@ -1,0 +1,27 @@
+footer{
+    
+    margin: 50px auto 0 auto;
+    padding: 48px 52px;
+    width: 84%;
+  }
+ 
+.footer-icon{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 36px;
+    border-top: 1px solid black;
+  }
+  @media only screen and (max-width:790px){
+    footer{
+      padding: 48px 32px;
+    }
+  }
+  @media only screen and (max-width:640px){
+    .footer-icon{
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }

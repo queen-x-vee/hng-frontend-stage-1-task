@@ -1,0 +1,34 @@
+.link-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.link-button{
+    width: 84%;
+    background: #e5e7eb;
+    margin-bottom: 24px;
+    transition: all .2s ease-in-out;
+    border-radius: 15px;
+}
+.link-button:hover{
+    background: #353637;
+    color:#fff;
+    transform: scale(1.03);
+  }
+.link{
+    text-decoration: none;
+    color: #111827;
+    padding: 24px 32px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .link:hover{
+    color:#fff;
+    font-weight: 600;
+    
+  }

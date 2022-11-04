@@ -40,6 +40,11 @@ export const userLinks = [
         id: 'book__design',
         title: 'Design Books',
         link: 'https://books.zuri.team/design-rules'
+    },
+    {
+        id: 'contact',
+        title: 'Contact Me',
+        link: '/contact'
     }
 ];  
 
