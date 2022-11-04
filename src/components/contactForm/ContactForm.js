@@ -120,7 +120,7 @@ const ContactForm = () => {
               You agree to providing your data to Valentina who may contact you
             </label>
           </div>
-          <p style={{ color: "red" }}>{formErrors.isChecked}</p>
+          <p style={{ color: "red" }}>{formErrors.isChecked&&handleChange}</p>
 
           <button id="btn__submit" > Send message</button>
         </form>
