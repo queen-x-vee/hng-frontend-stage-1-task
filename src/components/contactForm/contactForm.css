@@ -40,7 +40,7 @@ input[placeholder], textarea[placeholder] {
 
 input[type='checkbox']{
   margin-right: 12px;
-  padding: 40px;
+  padding:3px;
 }
 input[type='checkbox']:checked{
   background-color: red;
