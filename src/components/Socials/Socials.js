@@ -8,10 +8,10 @@ const Socials = () => {
     <div className="socials">
           {SocialLinks.map((social) => {
             return (
-              <div id={social.id}>
+              <>
                 <img src={social.slackImage} alt="slack" />
                 <img src={social.gitImage} alt="github" />
-              </div>
+              </>
             );
           })}
         </div>
