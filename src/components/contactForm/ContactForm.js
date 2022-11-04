@@ -27,7 +27,10 @@ const ContactForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    alert('Your message has been sent!')
+    if(formData.isChecked){
+      alert('Your message has been sent!')
+    }
+    
   }
   useEffect(() => {
     console.log(formErrors);
@@ -119,7 +122,7 @@ const ContactForm = () => {
           </div>
           <p style={{ color: "red" }}>{formErrors.isChecked}</p>
 
-          <button id="btn__submit"> Send message</button>
+          <button id="btn__submit" > Send message</button>
         </form>
       </div>
     </>

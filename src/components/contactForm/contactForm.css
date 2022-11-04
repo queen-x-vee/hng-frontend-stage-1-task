@@ -77,7 +77,7 @@ input[type='checkbox']:checked{
 button {
   border: 1px solid rgba(21, 112, 239, 1);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  background: rgba(21, 112, 239, 1);
+  background: #1570EF;
   height: 48px;
   width: 100%;
   color: #ffff;
@@ -86,9 +86,16 @@ button {
   margin: 12px auto;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  line-height: 24px;
-  
-  
+  line-height: 24px; 
+}
+button:hover{
+  background:#175CD3;
+}
+button:focus{
+  background: #1570EF;
+}
+button:checked{
+  background: #B2DDFF;
 }
 .form-header {
   width: 100%;
