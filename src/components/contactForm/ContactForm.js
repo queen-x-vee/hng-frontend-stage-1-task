@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./contactForm.css";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const formDetails = {
     firstName: "",
     lastName:"",
     email: "",
     message:"",
     isChecked: false,
-  });
+  }
+  const [formData, setFormData] = useState(formDetails);
+  const [formErrors, setFormErrors] = useState({})
+
   console.log(formData);
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -20,12 +23,28 @@ const ContactForm = () => {
       };
     });
   }
+ 
   function handleSubmit(event){
       event.preventDefault()
-      if (formData.isChecked){
-        console.log('successfully submittted')
-      }else {console.log('cant submit form')}
+      setFormErrors(validate(formData))
   }
+  useEffect(()=>{
+    console.log(formErrors)
+ if(Object.keys(formErrors).length === 0){
+ }
+  }, [formErrors])
+  const validate = (values)=>{
+    const errors = {}
+    /*const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i*/
+    if(!values.message){
+      errors.message= 'Please enter a message'
+    }
+    if(!values.isChecked){
+      errors.isChecked= 'Please tick this box'
+    }
+    return errors
+  }
+
   return (
     <>
       <div className="form">
@@ -46,7 +65,7 @@ const ContactForm = () => {
           </div>
 
           <div className="form-input">
-            <label>email</label>
+            <label>Email</label>
             <input type="email" id="email" placeholder="yourname@email.com" value={formData.email} name='email' onChange={handleChange}></input>
           </div>
           <div className="form-input">
@@ -59,8 +78,10 @@ const ContactForm = () => {
               name='message'
               onChange={handleChange}
             ></textarea>
+            <p style={{color:'red'}}>{formErrors.message}</p>
           </div>
-          <div>
+
+          <div className="input-check">
             <input type="checkbox"  checked={formData.isChecked}
                 name="isChecked"
                 onChange={handleChange}></input>
@@ -68,8 +89,9 @@ const ContactForm = () => {
               You agree to providing your data to Valentina who may contact you
             </label>
           </div>
+          <p style={{color:'red'}}>{formErrors.isChecked}</p>
 
-          <button id="btn__submit"> Send</button>
+          <button id="btn__submit"> Send message</button>
         </form>
       </div>
     </>

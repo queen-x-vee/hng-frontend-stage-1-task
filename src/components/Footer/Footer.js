@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
         {FooterLinks.map((footer) => {
           return (
-            <div className="footer-icon">
+            <div className="footer-icon" id={footer.id}>
               <img src={footer.Image1} alt="Zuri" />
               <p> HNG Internship 9 Frontend Task</p>
               <img src={footer.Image2} alt="ingressive" />

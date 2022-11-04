@@ -49,13 +49,13 @@ export const userLinks = [
 ];  
 
 export const SocialLinks=[
-    {
+    {   id: 'socialImage',
         slackImage: `${slackPic}`,
         gitImage: `${gitPic}`,  
     }
 ]
 export const FooterLinks=[
-    {
+    {   id: 'footerImage',
         Image1: `${Pic1}`,
         Image2: `${Pic2}`,  
     }
