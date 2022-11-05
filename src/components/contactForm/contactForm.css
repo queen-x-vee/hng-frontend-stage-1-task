@@ -26,11 +26,20 @@ input, textarea {
   padding: 10px 14px;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
-input:focus, textarea:focus{
+input:focus:valid{
+  border:1px solid #53b1fd;
+  outline: none;
+  box-shadow: 0 0 10px rgba(81,203,238,1);
+}
+input:focus:invalid{
+ border:1px solid rgba(248,150, 135, 1);
+ box-shadow: 0 0 10px rgba(248,150, 135, 1);
+ outline: none;
+}
+textarea:focus{
   border:1px solid #53b1fd;
   outline: none;
 }
-
 input[placeholder], textarea[placeholder] {
   color: #667085;
   font-family: 'Inter', sans-serif;
@@ -140,6 +149,6 @@ button:checked{
     width: 100%;
   }
   .input-large .form-input {
-    width: 48%;
+    width: 49%;
   }
 }

@@ -60,7 +60,7 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="input-large">
             <div className="form-input">
-              <label>First Name</label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 id="first_name"
@@ -71,8 +71,9 @@ const ContactForm = () => {
                 className={handleChange? 'input-hover': 'input'}
               ></input>
             </div>
+        
             <div className="form-input">
-              <label>Last Name</label>
+              <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
                 id="last_name"
@@ -85,9 +86,10 @@ const ContactForm = () => {
           </div>
 
           <div className="form-input">
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
+              required
               id="email"
               placeholder="yourname@email.com"
               value={formData.email}
@@ -96,7 +98,7 @@ const ContactForm = () => {
             ></input>
           </div>
           <div className="form-input">
-            <label>Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               rows="6"
               placeholder="Send me a message and I'll reply as soon as possible"
@@ -116,11 +118,11 @@ const ContactForm = () => {
               name="isChecked"
               onChange={handleChange}
             ></input>
-            <label>
+            <label htmlFor="isChecked">
               You agree to providing your data to Valentina who may contact you
             </label>
           </div>
-          <p style={{ color: "red" }}>{formErrors.isChecked&&handleChange}</p>
+          <p style={{ color: "red" }}>{formErrors.isChecked}</p>
 
           <button id="btn__submit" > Send message</button>
         </form>
